@@ -80,3 +80,63 @@ module.exports = {
   },
   plugins: [],
 };
+git add .
+git commit -m "Added backend starter"
+git push origin main
+import React from "react";
+import WalletConnect from "./components/WalletConnect";
+import Feed from "./components/Feed";
+import TradeDashboard from "./components/TradeDashboard";
+
+function App() {
+  return (
+    <div>
+      <h1>Zyra: Web2 + Web3 Hybrid Platform</h1>
+      <WalletConnect />
+      <Feed />
+      <TradeDashboard />
+    </div>
+  );
+}
+
+export default App;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zyra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    module.exports = {
+  content: ["./src/**/*.{html,js,jsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+import React, { useState } from "react";
+
+const WalletConnect = () => {
+  const [wallet, setWallet] = useState(null);
+
+  const connectWallet = () => {
+    // Logic to connect wallet (Placeholder for now)
+    setWallet("0x123456789abcdef"); // Replace with actual connection logic
+  };
+
+  return (
+    <div>
+      <button onClick={connectWallet} className="btn">
+        Connect Wallet
+      </button>
+      {wallet && <p>Connected Wallet: {wallet}</p>}
+    </div>
+  );
+};
+
+export default WalletConnect;
