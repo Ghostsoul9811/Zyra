@@ -132,6 +132,13 @@ const WalletConnect = () => {
   return (
     <div>
       <button onClick={connectWallet} className="btn">
+      [package]
+name = "solana_program"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+solana-program = "1.9.9"
         Connect Wallet
       </button>
       {wallet && <p>Connected Wallet: {wallet}</p>}
@@ -140,3 +147,20 @@ const WalletConnect = () => {
 };
 
 export default WalletConnect;
+use solana_program::{entrypoint, pubkey::Pubkey, msg};
+use solana_program::program_error::ProgramError;
+use solana_program::entrypoint::ProgramResult;
+
+entrypoint!(process_instruction);
+
+fn process_instruction(
+    program_id: &Pubkey,
+    _accounts: &[solana_program::account_info::AccountInfo],
+    _instruction_data: &[u8],
+) -> ProgramResult {
+    msg!("Zyra Solana smart contract executed");
+
+    // Add your Solana logic here (mint NFTs, token-gating, etc.)
+
+    Ok(())
+}
