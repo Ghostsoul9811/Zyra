@@ -43,3 +43,40 @@ export default function WalletConnect() {
       </button>
     </div>
   );
+import React from 'react';
+
+export default function Feed() {
+  return (
+    <div className="mt-6">
+      <h2 className="text-xl font-semibold">Feed</h2>
+      <p>Posts will appear here...</p>
+    </div>
+  );
+}
+import React from 'react';
+
+export default function TradeDashboard() {
+  return (
+    <div className="mt-6">
+      <h2 className="text-xl font-semibold">Trade Dashboard</h2>
+      <p>Live trading and stats here...</p>
+    </div>
+  );
+}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zyra Platform</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
+module.exports = {
+  content: ["./client/**/*.{js,jsx,ts,tsx,html}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
