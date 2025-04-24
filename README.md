@@ -18,3 +18,28 @@ zyra/
 │   │   └── src/lib.rs
 ├── .env.example
 └── README.md
+import React from 'react';
+import WalletConnect from './components/WalletConnect';
+import Feed from './components/Feed';
+import TradeDashboard from './components/TradeDashboard';
+
+export default function App() {
+  return (
+    <div className="p-6">
+      <h1 className="text-3xl font-bold">Zyra Hybrid Platform</h1>
+      <WalletConnect />
+      <Feed />
+      <TradeDashboard />
+    </div>
+  );
+}
+import React from 'react';
+
+export default function WalletConnect() {
+  return (
+    <div className="mt-4">
+      <button className="bg-blue-500 text-white px-4 py-2 rounded">
+        Connect Wallet
+      </button>
+    </div>
+  );
